@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>成都理工大学70周年互动纪念馆</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="phone-shell" id="app">
+      <div class="celebration-layer" id="celebrationLayer" aria-hidden="true"></div>
+      <nav class="topbar" aria-label="页面导航">
+        <span class="brand-logo" aria-label="成都理工大学"></span>
+        <div class="section-dots" aria-hidden="true">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </nav>
+
+      <section class="page hero page-active" data-page="0">
+        <img class="hero-bg" src="./cover-hero.jpg?v=20260601" alt="成都理工大学校园夜景" />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">1956 - 2026</p>
+          <h1 class="hero-title">
+            <img src="./hero-title-warm.png?v=20260602" alt="七秩风华，网述成理" />
+          </h1>
+          <p class="hero-copy">以红金为礼，沿着时间、山海与校园记忆，走进成都理工大学70周年互动纪念馆。</p>
+          <button class="primary-btn" data-next>点击进入</button>
+        </div>
+      </section>
+
+      <section class="page timeline" data-page="1">
+        <header class="page-head">
+          <p class="eyebrow">History</p>
+          <h2>成理时间轴</h2>
+          <p>点击年份，展开一段校史记忆。</p>
+        </header>
+        <div class="timeline-list" id="timelineList"></div>
+        <div class="section-nav">
+          <button class="ghost-btn" data-prev>上一页</button>
+          <button class="float-next" data-next>下一页</button>
+        </div>
+      </section>
+
+      <section class="page geology" data-page="2">
+        <header class="page-head">
+          <p class="eyebrow">Geology</p>
+          <h2>成理地质特色</h2>
+          <p>地质底色，是成理最鲜明的精神坐标。</p>
+        </header>
+        <div class="geo-card">
+          <img src="./李四光雕像.png" alt="李四光雕像" />
+          <div>
+            <strong>地质传承</strong>
+            <p>从地质勘探起步，服务国家资源能源、防灾减灾与生态文明建设。</p>
+          </div>
+        </div>
+        <div class="geo-grid">
+          <article>
+            <span>01</span>
+            <h3>从地质起步</h3>
+            <p>承续地质办学传统，把学科根脉扎进祖国大地。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>向山海深处</h3>
+            <p>面向资源能源、地质环境与防灾减灾，探索山川深处的答案。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>为时代服务</h3>
+            <p>立足学科优势，服务国家战略、区域发展与生态文明建设。</p>
+          </article>
+        </div>
+        <div class="section-nav">
+          <button class="ghost-btn" data-prev>上一页</button>
+          <button class="float-next" data-next>下一页</button>
+        </div>
+      </section>
+
+      <section class="page memories" data-page="3">
+        <header class="page-head">
+          <p class="eyebrow">Memory</p>
+          <h2>校园记忆</h2>
+          <p>砚湖、银杏、亭台与教学楼，都是成理人的青春注脚。</p>
+        </header>
+        <div class="photo-rail" aria-label="校园照片滑动相册">
+          <div class="photo-track" id="photoTrack">
+            <figure>
+              <img src="./640-1.jpg" alt="银杏校园" />
+              <figcaption>银杏映秋</figcaption>
+            </figure>
+            <figure>
+              <img src="./640-21.jpg" alt="校园湖景" />
+              <figcaption>砚湖波光</figcaption>
+            </figure>
+            <figure>
+              <img src="./岭南阁.png" alt="岭南阁" />
+              <figcaption>岭南阁</figcaption>
+            </figure>
+            <figure>
+              <img src="./国家重点实验室1(1).png" alt="国家重点实验室" />
+              <figcaption>科研楼宇</figcaption>
+            </figure>
+            <figure>
+              <img src="./成理图片6.jpg" alt="校园建筑倒影" />
+              <figcaption>湖畔书声</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="memory-line">一张照片，一段青春；一次回望，一声祝福。</div>
+        <div class="section-nav">
+          <button class="ghost-btn" data-prev>上一页</button>
+          <button class="float-next" data-next>下一页</button>
+        </div>
+      </section>
+
+      <section class="page blessing" data-page="4">
+        <header class="page-head">
+          <p class="eyebrow">Blessing</p>
+          <h2>生成祝福卡</h2>
+          <p>输入你的信息，生成一张70周年纪念祝福卡。</p>
+        </header>
+        <form class="wish-form" id="wishForm">
+          <label>
+            身份
+            <select id="roleInput">
+              <option value="student">学生</option>
+              <option value="alumni">校友</option>
+              <option value="teacher">教师 / 教职工</option>
+              <option value="team">学院 / 班级 / 团队</option>
+              <option value="general">通用</option>
+            </select>
+          </label>
+          <label>
+            姓名
+            <input id="nameInput" type="text" maxlength="12" placeholder="请输入你的姓名" />
+          </label>
+          <label>
+            学院 / 单位
+            <input id="collegeInput" type="text" maxlength="20" placeholder="请输入你的学院或单位" />
+          </label>
+          <label>
+            祝福语
+            <textarea id="wishInput" maxlength="80" placeholder="写一句给成理的祝福"></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">生成祝福卡</button>
+            <button type="button" class="ghost-btn" id="randomWish">换一句</button>
+          </div>
+        </form>
+
+        <article class="wish-card" id="wishCard">
+          <div class="wish-school-logo" aria-label="成都理工大学"></div>
+          <div class="card-divider"></div>
+          <div class="card-num"><span>70</span><em>th</em></div>
+          <h3 id="cardTitle">
+            <img src="./card-title-warm.png?v=20260602" alt="七秩风华，网述成理" />
+          </h3>
+          <p id="cardText">祝成都理工大学建校70周年快乐！愿成理薪火相传，桃李芬芳，再攀高峰。</p>
+          <footer id="cardSign">成理人 敬贺</footer>
+        </article>
+
+        <button class="save-btn" id="saveCard">下载祝福卡</button>
+        <button class="back-btn" data-prev>上一页</button>
+      </section>
+
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
