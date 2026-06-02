@@ -321,21 +321,18 @@ async function saveCard() {
   ctx.fillStyle = "rgba(255,232,163,0.74)";
   ctx.fillRect(74, 128, 42, 3);
 
-  const numGradient = ctx.createLinearGradient(70, 170, 70, 420);
-  numGradient.addColorStop(0, "#fff0b5");
-  numGradient.addColorStop(0.48, "#f8c75c");
-  numGradient.addColorStop(1, "#ad6b1b");
-  ctx.fillStyle = numGradient;
-  ctx.font = "900 270px Arial, sans-serif";
-  ctx.shadowColor = "rgba(61,5,5,0.42)";
-  ctx.shadowBlur = 18;
-  ctx.shadowOffsetY = 9;
-  ctx.fillText("70", 74, 390);
-  ctx.shadowColor = "transparent";
-
-  ctx.fillStyle = "#ffe8a3";
-  ctx.font = "italic 62px Arial, sans-serif";
-  ctx.fillText("th", 392, 378);
+  try {
+    const anniversary = await loadImage("./anniversary-70.png");
+    ctx.drawImage(anniversary, 74, 160, 390, 195);
+  } catch {
+    const numGradient = ctx.createLinearGradient(70, 170, 70, 420);
+    numGradient.addColorStop(0, "#fff0b5");
+    numGradient.addColorStop(0.48, "#f8c75c");
+    numGradient.addColorStop(1, "#ad6b1b");
+    ctx.fillStyle = numGradient;
+    ctx.font = "900 270px Arial, sans-serif";
+    ctx.fillText("70", 74, 390);
+  }
 
   try {
     const title = await loadImage("./card-title-warm.png");
